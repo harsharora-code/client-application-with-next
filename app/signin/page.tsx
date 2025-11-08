@@ -13,13 +13,12 @@ export default function Signin() {
                 <input type="text" placeholder="password" onChange={e => {
                     setPassword(e.target.value);
                 }}></input>
-                <button onClick={() => {
-                    console.log(username)
-                    console.log(password)
-                    axios.post("http://localhost:3000/api/v1/signin", {
+                <button onClick={ async () => {
+                  const res = await axios.post("http://localhost:3000/api/v1/signin", {
                         username,
                         password
                     })
+                    localStorage.setItem("token", res.data.token)
                 }}> Signin </button>
                  </div>
 

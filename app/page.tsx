@@ -1,7 +1,14 @@
-import Image from "next/image";
 
-export default function Home() {
+import {getServerSession} from "next-auth";
+export default async function Home() {
+  const sessiion = await getServerSession();
+
   return (
-    <div>original page</div>
-  );
+    <div>
+      {JSON.stringify(sessiion)}
+    
+    </div>
+   
+  )
 }
+ 
