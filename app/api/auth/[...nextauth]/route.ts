@@ -21,9 +21,9 @@ CredentialsProvider({
       const username = credentials?.username;
       const password = credentials?.password;
       const user = { 
-        name: "harsh",
+        name: username,
          id: "1",
-        email: "harsh20@gmail.com"
+        email: username
          }
 
       if (user) {
